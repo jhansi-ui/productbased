@@ -1,0 +1,41 @@
+
+input[type=text] {
+    border: none;
+    border-bottom:1px solid #494d82;;
+    width: 70%;
+    margin-left: 20px;
+  }
+  input[type=text]:focus {
+    border: none;
+    border-bottom: 1px solid #494d82;;
+    width: 70%;
+    margin-left: 20px;
+    outline: none;
+  }
+  .somedataaboutcontent{
+      background-color:white;
+  }
+  .somedataaboutcontents{
+    background-color:white;
+    margin: 4px 7px 4px 7px;
+  }
+  
+  input::placeholder {
+    text-align:center;
+    color:#383d7d;
+  }
+  h5{
+      font-weight:bold;
+  }
+ .images-data img{
+    height: 145px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+ }
+ .btn-success{
+     margin-top:10px;
+ }
+ h6{
+     font-weight:bold;
+     font-size:11px;
+ }

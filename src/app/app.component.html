@@ -1,21 +1,72 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+<!-- <p>{{ filterfinalspacex | json}}</p> -->
+<div class="container-fluid">
+  <div class="jumbotron">
+<div class="row">
+  <!--*ngIf="filterfinalspacex.length-->
+  <div class="col-lg-2 col-sm-12 somedataaboutcontent">
+    <!------------------All Filters Data Start---------------->
+    <div class="row" >
+    <div class="col-lg-12 col-sm-12">
+      <h5>Filters</h5>
+      <form class="header-search-form">
+        <input type="text" name="launchyeardatass" placeholder="LaunchYear" [(ngModel)]="allfilterscontet"/>
+      </form>
+    </div>
+      <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let filtersalldatas of filterall'>
+       <button type="button" class="btn btn-sm btn-success">{{filtersalldatas.launch_year }}</button>
+      <!--<div class="col-lg-6" *ngFor='let filterdatas of filtersalldatas[0].rocket'>{{filterdatas.rocket_name}}</div>-->
+      </div>
+  </div>
+   <!-----------------------All Filters Data End------------------>
+   <!----------------Successful Launch Start --------------------->
+   <div class="row">
+    <div class="col-lg-12 col-lg-12">
+      <form class="header-search-forms">
+        <input type="text" name="launchyeardatas" placeholder="SuccessfulLaunch"[(ngModel)]="suceesfulLaunchYeardatas"/>
+      </form>
+    </div>
+      <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let lunchsuccessdatass of filterfinallunch'>
+        <button type="button" class="btn btn-sm btn-success">{{lunchsuccessdatass.launch_success}}</button>
+       </div>
+  </div>
+   <!----------------Successful Launch Start --------------------->
+    <!----------------Successful Landing Start --------------------->
+    <div class="row">
+      <div class="col-lg-12 col-lg-12">
+        <form class="header-searchs-form">
+          <input type="text" name="launchyeardata" placeholder="SuccessfulLand"[(ngModel)]="suceesfulLandYeardatas"/>
+        </form>
+      </div>
+        <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let filterlunchandlandss of filterlunchandland'>
+          <button type="button" class="btn btn-sm btn-success">{{filterlunchandlandss.launch_success}}</button>
+         </div>
+    </div>
+    <!----------------Successful Landing End(click)="lauchsuccessclick(filterlunchandland)" --------------------->
+  </div>
+  <!-----------------------Left Filtering Data End-->
+  <div class="col-lg-10">
+    <div class="row">
+          <div class="col-lg-3 col-sm-12 somedataaboutcontents" *ngFor="let xyz of filterfinalspacexres | successland:allfilterscontet:suceesfulLaunchYeardatas" >
+            <!-- logo  -->
+              <img  class ="logo" [src]="xyz.mission_patch_small" alt="spacedetailsimages"  >
+            
+            <h6>Launch Year:{{xyz.launch_year}}</h6>
+         
+            <h6>Successful Launch :{{xyz.launch_success}}</h6>
+
+        
+            <h6>Successful Launch Landing:{{xyz.land_success}}</h6>
+        
+        </div>
+    </div>
+      <!--------------------------------------------->
+      
+      </div>
+      <!---------------------------------------------------------------->
+   
+</div>
+
+<!-- <div class="col-lg-6"  *ngFor='let y of x[0]?.rocket'>jhansi{{y.rocket_name}}</div> -->
+</div>
+</div>
