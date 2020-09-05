@@ -12,10 +12,10 @@ transform(items: any, nameSearch: any, emailSearch: any, companySearch: any){
               return false;
           }
           if (emailSearch && item.launch_success.toLowerCase().indexOf(emailSearch.toLowerCase()) === -1){
-            return items ? "true" : "false";
+            return false;
         }
           if (companySearch && item.land_success.toLowerCase().indexOf(companySearch.toLowerCase()) === -1){
-            return items ? "Yes" : "No";
+            return false;
           }
           return true;
      })
