@@ -1,63 +1,68 @@
 
 <!-- <p>{{ filterfinalspacex | json}}</p> -->
 
-<div class="container-fluid">
+<div class="container-fluid-lg">
   <div class="jumbotron">
 <div class="row">
   <!--*ngIf="filterfinalspacex.length-->
-  <div class="col-lg-2 col-sm-12 somedataaboutcontent">
+  <div class="col-lg-12 col-12 spacxheading">
+    <h3>SpaceX Launch Programs</h3>
+  </div>
+  <div class="col-lg-2 col-12 somedataaboutcontent">
     <!------------------All Filters Data Start---------------->
     <div class="row" >
-    <div class="col-lg-12 col-sm-12">
-      <h5>Filters</h5>
+    <div class="col-lg-12 col-12">
+      <h5 class="filterheading">Filters</h5>
       <form class="header-search-form">
-        <input type="text" name="launchyeardatass" placeholder="LaunchYear" [(ngModel)]="allfilterscontet"/>
+        <input type="text" name="launchyeardatass" placeholder="Launch Year" [(ngModel)]="allfilterscontet"/>
       </form>
     </div>
-      <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let filtersalldatas of filterall'>
-       <button type="button" class="btn btn-sm btn-success">{{filtersalldatas.launch_year }}</button>
+      <div class="col-lg-5 col-5 somebtn" *ngFor='let filtersalldatas of filterall'>
+       <a><button type="button" class="btn btn-sm btn-success">{{filtersalldatas.launch_year }}</button></a>
       <!--<div class="col-lg-6" *ngFor='let filterdatas of filtersalldatas[0].rocket'>{{filterdatas.rocket_name}}</div>-->
       </div>
   </div>
    <!-----------------------All Filters Data End------------------>
    <!----------------Successful Launch Start --------------------->
    <div class="row">
-    <div class="col-lg-12 col-lg-12">
+    <div class="col-lg-12 col-12">
       <form class="header-search-forms">
-        <input type="text" name="launchyeardatas" placeholder="SuccessfulLaunch"[(ngModel)]="suceesfulLaunchYeardatas"/>
+        <input type="text" name="launchyeardatas" placeholder="Successful Launch"[(ngModel)]="SuceesfulLaunchYeardatas"/>
       </form>
     </div>
-      <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let lunchsuccessdatass of filterfinallunch'>
-        <button type="button" class="btn btn-sm btn-success">{{lunchsuccessdatass.launch_success}}</button>
+      <div class="col-lg-5 col-5 somebtn" *ngFor='let lunchsuccessdatass of filterfinallunch'>
+       <a> <button type="button" class="btn btn-sm btn-success">{{lunchsuccessdatass.launch_success}}</button></a>
        </div>
   </div>
    <!----------------Successful Launch Start --------------------->
     <!----------------Successful Landing Start --------------------->
     <div class="row">
-      <div class="col-lg-12 col-lg-12">
+      <div class="col-lg-12 col-12">
         <form class="header-searchs-form">
-          <input type="text" name="launchyeardata" placeholder="SuccessfulLand"[(ngModel)]="suceesfulLandYeardatas"/>
+          <input type="text" name="launchyeardata" placeholder="Successful Land"[(ngModel)]="suceesfulLandYeardatas"/>
         </form>
       </div>
-        <div class="col-lg-5 col-sm-5 col-md-offset-1" *ngFor='let filterlunchandlandss of filterlunchandland'>
-          <button type="button" class="btn btn-sm btn-success">{{filterlunchandlandss.launch_success}}</button>
+        <div class="col-lg-5 col-5 somebtn" *ngFor='let filterlunchandlandss of filterlunchandland'>
+          <a> <button type="button" class="btn btn-sm btn-success">{{filterlunchandlandss.land_success}}</button></a>
          </div>
     </div>
     <!----------------Successful Landing End(click)="lauchsuccessclick(filterlunchandland)" --------------------->
   </div>
   <!-----------------------Left Filtering Data End-->
-  <div class="col-lg-10">
+  <div class="col-lg-10 col-12" somecheck>
     <div class="row">
-          <div class="col-lg-3 col-sm-12 somedataaboutcontents" *ngFor="let xyz of filterfinalspacexres | successland:allfilterscontet:suceesfulLaunchYeardatas" >
+          <div class="col-lg-3 col-12 somedataaboutcontents" *ngFor="let xyz of filterfinalspacexres | successland:allfilterscontet:suceesfulLaunchYeardatas:suceesfulLandYeardatas" >
             <!-- logo  -->
-              <img  class ="logo" [src]="xyz.mission_patch_small" alt="spacedetailsimages"  >
+             <!--<img  class ="logo" [src]="xyz.mission_patch_small" alt="spacedetailsimages"  >-->
+             <!------------------using static image ---------------->
+             <img class="logo"src="/assets/images/nLppz9HW_o.png" alt="dummy"/>
             
-            <h6>Launch Year:{{xyz.launch_year}}</h6>
+            <h6 class="displaydata">Launch Year:{{xyz.launch_year}}</h6>
          
-            <h6>Successful Launch :{{xyz.launch_success}}</h6>
+            <h6 class="displaydata">Successful Launch :{{xyz.launch_success}}</h6>
 
         
-            <h6>Successful Launch Landing:{{xyz.land_success}}</h6>
+            <h6 class="displaydata">Successful Launch Landing:{{xyz.land_success}}</h6>
         
         </div>
     </div>
